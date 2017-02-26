@@ -1,7 +1,10 @@
+
+using Dapper.Contrib.Extensions;
 using System;
 
 namespace Tibox.Models
 {
+    [Table("[Order]")]
     public class Order
     {
         public int Id { get; set; }
