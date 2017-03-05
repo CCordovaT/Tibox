@@ -15,7 +15,8 @@ namespace Tibox.UnitOfWork
         public TiboxUnitOfWork()
         {
             Customers = new CustomerRepositorio();
-            Orders = new BaseRepositorio<Order>();
+            //Orders = new BaseRepositorio<Order>();
+            Orders = new OrderRepositorio();
             OrderItems = new BaseRepositorio<OrderItem>();
             Products = new BaseRepositorio<Product>();
             Suppliers = new BaseRepositorio<Supplier>();
@@ -23,7 +24,8 @@ namespace Tibox.UnitOfWork
 
         public void Dispose() { Dispose(); }
         public ICustomerRepositorio Customers { get; private set; }
-        public IRepositorio<Order> Orders { get; private set; }
+        //public IRepositorio<Order> Orders { get; private set; }
+        public IOrderRepositorio Orders { get; private set; }
         public IRepositorio<OrderItem> OrderItems { get; private set; }
         public IRepositorio<Product> Products { get; private set; }
         public IRepositorio<Supplier> Suppliers { get; private set; }
