@@ -10,6 +10,7 @@ namespace Tibox.Repositorio.Tests
     {
 
         private readonly IRepositorio<Order> _Base;
+        //private readonly BaseRepositorio<Order> _Base;
 
         public PruebaRepositorioOrder()
         {
