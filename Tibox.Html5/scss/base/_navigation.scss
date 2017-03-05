@@ -1,0 +1,17 @@
+﻿nav{
+    ul li a{
+        text-decoration: none;
+
+        &:link{
+            text-decoration: none;
+        }
+
+        &:visited{
+            color: $site-color-white;
+        }
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
