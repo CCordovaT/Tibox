@@ -7,7 +7,7 @@ namespace Tibox.Repositorio
 {
    public class BaseRepositorio<T> : IRepositorio<T> where T : class
     {
-        private readonly string _cCadenaConexion;
+        protected readonly string _cCadenaConexion; //El protected permite que se use desde la clase que herede
 
         public BaseRepositorio()
         {
