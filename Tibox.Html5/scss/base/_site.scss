@@ -4,32 +4,44 @@
     padding-right: 2rem;
 
     @include break-point(md){
-        padding-left: 4rem;
-        padding-right: 4rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .headerlogo{
+        img{
+            float:left;
+            margin-left: 2rem;
+            margin-top: 10px;
+            width: 40px;
+            height: auto;
+        }
     }
 
     header{
-        position: absolute;
+        position: fixed;
         right:0;
         left:0;
-        top:0;
+        top:0;  
         background-color: $site-color-black;
         height: 4rem;
     }
 
     section{
         padding-top: 3rem;
+        margin-bottom: 4rem;
     }
 
     footer{
         background-color: $site-color-black;
         color: $site-color-white;
         height: 2rem;
-        position:absolute;
+        position: fixed;
         right: 0;
         left: 0;
         bottom: 0;
         text-align: center;
+        padding-top: 10px;
     }
 
 }

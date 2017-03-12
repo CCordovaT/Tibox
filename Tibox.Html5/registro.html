@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" /> <!--Para que aplique las resoluciones-->
+    <title>Bienvenidos a Tibox WebSite</title>
+    <link href="style/styles.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <header>
+        <a class="headerlogo" href="index.html">
+            <img src="/images/logo.png" />
+        </a>
+        <nav class="dropdown">
+            <button class="menu-title">Menu</button>
+            <ul class="dropdown-content">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="ubicanos.html">Ubicanos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h3>Registro</h3>
+        <form>
+            <p>
+                Experiencia laboral:
+                EF: <input type="number" value="0" min="0" step="0.1" /><br />
+                ADO: <input type="number" value="0" min="0" /><br />
+                MVC: <input type="number" value="0" min="0" /><br />
+                JavaScript: <input type="number" value="0" min="0" /><br />
+            </p>
+            <p>
+                Codigo: <input type="text" readonly/>
+            </p>
+            <p>
+                <datalist id="browsers">
+                    <option value="Internet Explorer"></option>
+                    <option value="Firefox"></option>
+                    <option value="Chrome"></option>
+                    <option value="Opera"></option>
+                    <option value="Safari"></option>
+                </datalist>
+                Browser preferido: <input list="browsers"/>
+            </p>
+            <p>
+                Nombre <input type="text" required title="Ingresar el nombre" oninvalid="this.setCustomValidity('El nombre es requerido!')" oninput="setCustomValidity('')" />
+            </p>
+            <p>
+                Fecha de nacimiento: <input type="date" value="2013-09-01" />
+            </p>
+            <p>
+                Edad: <input type="number" name="edad" min="18" max="75" />
+            </p>
+            <p>
+                Correo: <input type="email" placeholder="email@domail.com" />
+            </p>
+            <p>
+                Pagina Web: <input type="url" />
+            </p>
+            <p>
+                Telefono: <input type="tel" pattern="\d\d\d-\d\d\d\d" />
+            </p>
+            <p>
+                Color Favorito: <input type="color" accept="#b97a40" />
+            </p>
+            <p>
+                Certificados: <input type="file" multiple accept=".xls, .xlsx" />
+            </p>
+            <p>
+                Curriculum: <input type="file" accept=".pdf" />
+            </p>
+            <p>
+                <input type="submit" value="submit" />
+            </p>
+                </form>
+    </section>
+    <footer>
+        Nuestra Direccion
+    </footer>
+</body>
+</html>
