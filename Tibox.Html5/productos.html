@@ -5,6 +5,12 @@
     <title>Bienvenidos a Tibox WebSite</title>
     <link href="style/styles.min.css" rel="stylesheet" />
     <meta charset="utf-8" />
+    <script src="components/jquery/jquery.min.js"></script>
+    <link href="components/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="components/bootstrap/js/bootstrap.js"></script>
+    <link href="components/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <script src="scripts/index.js"></script>
+    <script src="scripts/video.js"></script>
 </head>
 <body>
     <header>
@@ -23,10 +29,20 @@
     </header>
     <h3>Nuestros productos</h3>
     <section>        
-        <video preload="auto" width="320" height="240" controls>
-            <source src="html5.mp4" type="video/mp4" />
-            Your browser does not support the video tag
+        <video preload="auto" width="320" height="240" id="video">
+            <source src="html5.mp4" type="video/mp4" media="" />
         </video>
+        <div>
+            <button class="btn btn-success" onclick="tibox.video.play();">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-success" onclick="tibox.video.pause();">
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-success" onclick="tibox.video.stop();">
+                <i class="fa fa-stop" aria-hidden="true"></i>
+            </button>
+        </div>
     </section>
     <section>
         <audio controls>
@@ -35,7 +51,7 @@
         </audio>
     </section>
     <footer>
-        Nuestra Direccion
+        Nuestra Direccion <span id="date"></span>
     </footer>
 </body>
 </html>
