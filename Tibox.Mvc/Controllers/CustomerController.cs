@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using Tibox.UnitOfWork;
 using Tibox.Models;
+using Tibox.Mvc.FilterActions;
 
 namespace Tibox.Mvc.Controllers
 {
+    [ErrorHandler]
     public class CustomerController : Controller
     {
-        private readonly TiboxUnitOfWork _unit;
+        private readonly IUnitOfWork _unit;
 
         public CustomerController()
         {
@@ -42,34 +44,48 @@ namespace Tibox.Mvc.Controllers
 
         }
 
-        public ActionResult Edit(int id)
+        //public ActionResult Edit(int id)
+        //{
+        //    return View(_unit.Customers.GetEntityById(id));
+        //}
+
+        public PartialViewResult Edit(int id)
         {
-            return View(_unit.Customers.GetEntityById(id));
+            return PartialView(_unit.Customers.GetEntityById(id));
         }
 
         [HttpPost]
         public ActionResult Edit(Customer customer)
         {
 
-            if (ModelState.IsValid)
-            {
-                if (_unit.Customers.Update(customer))
-                    return RedirectToAction("Index");
-            }
-            return View(customer);
+            //if (ModelState.IsValid)
+            //{
+            //    if (_unit.Customers.Update(customer))
+            //        return RedirectToAction("Index");
+            //}
+            //return View(customer);
+
+            if (!ModelState.IsValid) return PartialView("Edit", customer);
+            _unit.Customers.Update(customer);
+            return RedirectToAction("Index");
 
         }
 
-        public ActionResult delete(int id)
+        public PartialViewResult delete(int id)
         {
-            return View(_unit.Customers.GetEntityById(id));
+            return PartialView(_unit.Customers.GetEntityById(id));
         }
 
         [HttpPost]
         public ActionResult delete(Customer customer)
         {
             if (_unit.Customers.Delete(customer)) return RedirectToAction("Index");
-            return View(customer);                        
+            return PartialView("Delete", customer);                        
+        }
+
+        public ActionResult Error()
+        {
+            throw new TimeZoneNotFoundException();
         }
 
     }

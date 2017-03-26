@@ -50,9 +50,14 @@
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            <!--@Html.ActionLink("Details", "Details", new { id=item.Id }) |-->
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+            <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Edit", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-info">
+                <span class="glyphicon glyphicon-edit"></span>  Edit
+            </a>
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Delete", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-danger">
+                <span class="glyphicon glyphicon-erase"></span>  Delete
+            </a>
         </td>
     </tr>
 }

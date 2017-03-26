@@ -53,7 +53,17 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Ajax.BeginForm("Delete", new { Controller = "Customer" },
+                                            new AjaxOptions
+                                            {
+                                                HttpMethod = "Post",
+                                                InsertionMode = InsertionMode.Replace,
+                                                UpdateTargetId = "modal-body",
+                                                OnSuccess = "tibox.shared.closeModal"
+                                            }
+                                          )
+                       )
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
