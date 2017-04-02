@@ -26,26 +26,22 @@ namespace Tibox.Mvc.Controllers
 
         public ActionResult Create()
         {
-            var model = new OrderViewModel
-            {
-                Order = new Order { OrderDate = DateTime.Now },
-                Customers = _unit.Customers.GetAllEntitys()
-            };
-            return View(model);
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Create(OrderViewModel model)
+        public JsonResult Save(OrderViewModel model)
         {
-
-            if (!ModelState.IsValid) {
-                model.Customers = _unit.Customers.GetAllEntitys();
-                return View(model);
-            } 
-            var id = _unit.Orders.Insert(model.Order);
-            return RedirectToAction("Index");
-
-        }
+            if (!ModelState.IsValid) return Json("Error");
+            //var id = _unit.Orders.Insert(model.Order);
+            //model.OrderItems.Select(oi => { oi.OrderId = id; return oi; }).ToList();
+            //foreach(var orderitem in model.OrderItems)
+            //{
+            //    _unit.OrderItems.Insert(orderitem);
+            //}
+            var id = _unit.Orders.SaveOrderAndOrderItems(model.Order, model.OrderItems);
+            return Json("ok");
+        }       
 
     }
 }

@@ -11,6 +11,7 @@ namespace Tibox.Mvc.Models
 
         public Order Order { get; set; }
         public IEnumerable<Customer> Customers { get; set; }
+        public IList<OrderItem> OrderItems { get; set; }
 
     }
 }

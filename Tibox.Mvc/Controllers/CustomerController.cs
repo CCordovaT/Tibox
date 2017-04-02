@@ -111,5 +111,11 @@ namespace Tibox.Mvc.Controllers
             return PartialView(_unit.Customers.ObtenerPorPagina(_nInicio, _nFin));
         }
 
+        public JsonResult Customers()
+        {
+            var customers = _unit.Customers.GetAllEntitys();
+            return Json(customers, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Dapper.Contrib.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -37,6 +38,39 @@ namespace Tibox.Repositorio.Northwind
                     order.OrderItems = multiple.Read<OrderItem>();
                     return order;
                 }
+            }
+        }
+
+        public bool SaveOrderAndOrderItems(Order order, IEnumerable<OrderItem> items)
+        {
+            using (var _conn = new SqlConnection(_cCadenaConexion))
+            {
+                _conn.Open();
+                using(var transaction = _conn.BeginTransaction())
+                {
+
+                    try
+                    {
+                        var id = (int)_conn.Insert(order, transaction);
+                        foreach(var orderItem in items)
+                        {
+
+                            orderItem.OrderId = id;
+                            _conn.Insert(order, transaction);
+
+                        }
+                        transaction.Commit();
+                        return true;
+
+                    }
+                    catch
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+
+                }
+                return false;
             }
         }
     }
