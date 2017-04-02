@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Tibox.Models.Customer>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Edit", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-info">
+                    <span class="glyphicon glyphicon-edit"></span>  Edit
+                </a>
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Delete", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-erase"></span>  Delete
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

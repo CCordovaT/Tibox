@@ -50,5 +50,29 @@ namespace Tibox.Repositorio.Northwind
             }
         }
 
+        public IEnumerable<Customer> ObtenerPorPagina(int pnStar, int pnFinal)
+        {
+            using (var _conn = new SqlConnection(_cCadenaConexion))
+            {
+
+                var parameters = new DynamicParameters();
+                parameters.Add("@startRow", pnStar);
+                parameters.Add("@endRow", pnFinal);
+
+                return _conn.Query<Customer>("[dbo].[usp_CustomerPagedList]", parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+            }
+        }
+
+        public int count()
+        {
+
+            using (var _conn = new SqlConnection(_cCadenaConexion))
+            {
+                return _conn.ExecuteScalar<int>("SELECT COUNT(id) FROM dbo.Customer");
+            }
+
+        }
+
     }
 }

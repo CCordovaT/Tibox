@@ -24,6 +24,14 @@ namespace Tibox.Mvc.App_Start
                 new ScriptBundle("~/bundles/shared")
                 .Include("~/Scripts/app/shared/modal.js"));
 
+            bundles.Add(
+                new ScriptBundle("~/bundles/bootpag")
+                .Include("~/Scripts/jquery.bootpag.min.js"));
+
+            bundles.Add(
+                new ScriptBundle("~/bundles/customer")
+                .Include("~/Scripts/app/customer/customer.js"));
+
             bundles.Add(new DynamicFolderBundle("js", "*.js", false, new JsMinify()));
             bundles.Add(new DynamicFolderBundle("css", "*.css", false, new CssMinify()));
 

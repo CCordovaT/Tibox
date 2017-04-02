@@ -12,5 +12,7 @@ namespace Tibox.Repositorio.Northwind
 
         Customer ObtenerxNombre(string pcFirstName, string pcLastName);
         Customer CustomerWithOrders(int id);
+        IEnumerable<Customer> ObtenerPorPagina(int pnStart, int pnFinal);
+        int count();
     }
 }

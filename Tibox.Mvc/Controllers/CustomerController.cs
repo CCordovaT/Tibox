@@ -9,14 +9,15 @@ using Tibox.Mvc.FilterActions;
 
 namespace Tibox.Mvc.Controllers
 {
-    [ErrorHandler]
-    public class CustomerController : Controller
+    //[ErrorHandler] YA ESTA ADMINISTRADO EN EL BASE
+    [RoutePrefix("Customer")]
+    public class CustomerController : BaseController
     {
-        private readonly IUnitOfWork _unit;
+        //private readonly IUnitOfWork _unit;
 
-        public CustomerController()
+        public CustomerController(IUnitOfWork unit) : base(unit)
         {
-            _unit = new TiboxUnitOfWork();
+            //_unit = new TiboxUnitOfWork();
         }
 
         // GET: Customer
@@ -80,12 +81,34 @@ namespace Tibox.Mvc.Controllers
         public ActionResult delete(Customer customer)
         {
             if (_unit.Customers.Delete(customer)) return RedirectToAction("Index");
-            return PartialView("Delete", customer);                        
+            return PartialView("Delete", customer);
         }
 
         public ActionResult Error()
         {
             throw new TimeZoneNotFoundException();
+        }
+
+        [Route("Count/{rows:int}")]
+        public JsonResult Count(int rows)
+        {
+            var totalRecords = _unit.Customers.count();
+            var totalPages = Math.Ceiling((decimal)totalRecords / rows);
+            var page = new
+            {
+                totalPages = totalPages
+            };
+            return Json(page, JsonRequestBehavior.AllowGet);
+        }
+
+        [Route("List/{page:int}/{rows:int}")]
+        public PartialViewResult List(int page, int rows)
+        {
+
+            int _nInicio = _nInicio = rows * (page - 1) + 1;
+            int _nFin = _nInicio + rows - 1;
+
+            return PartialView(_unit.Customers.ObtenerPorPagina(_nInicio, _nFin));
         }
 
     }
