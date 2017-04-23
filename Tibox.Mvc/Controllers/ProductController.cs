@@ -9,17 +9,13 @@ namespace Tibox.Mvc.Controllers
 {
     public class ProductController : BaseController
     {
-
         public ProductController(IUnitOfWork unit): base(unit)
         {
-
         }
-        
         public JsonResult Products()
         {
-            var products = _unit.Products.GetAllEntitys();
+            var products = _unit.Products.GetAll();
             return Json(products, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

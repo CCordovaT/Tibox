@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7E6405ED-D286-4546-BDD9-C9A940C6A6A0}</ProjectGuid>
+    <ProjectGuid>{BC2CFCF6-12E6-4D31-9E1C-546A89072A8B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -157,9 +157,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
   </ItemGroup>
@@ -186,7 +184,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Customer\Edit.cshtml" />
-    <Content Include="Views\Customer\delete.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Customer\List.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
@@ -201,19 +199,18 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Tibox.Models.csproj">
       <Project>{76d2c39b-04a7-4297-8978-1d8ecbd8ca67}</Project>
       <Name>Tibox.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tibox.Repositorio\Tibox.Repositorio.csproj">
-      <Project>{4b31bfac-9d12-4882-ae75-e11f31e711d0}</Project>
-      <Name>Tibox.Repositorio</Name>
+    <ProjectReference Include="..\Tibox.Repository\Tibox.Repository.csproj">
+      <Project>{F2FC3802-BB38-4365-9B77-AD722A860ACC}</Project>
+      <Name>Tibox.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tibox.UnitOfWork\Tibox.UnitOfWork.csproj">
-      <Project>{a3fec60d-d6fa-4572-9bc9-5cd32c377aff}</Project>
+      <Project>{F1F6B300-BCD6-45CB-8BF6-7B13D8697D8B}</Project>
       <Name>Tibox.UnitOfWork</Name>
     </ProjectReference>
   </ItemGroup>
@@ -228,11 +225,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>38803</DevelopmentServerPort>
+          <DevelopmentServerPort>25160</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:38767/</IISUrl>
+          <IISUrl>http://localhost:25160/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -244,7 +241,7 @@
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />

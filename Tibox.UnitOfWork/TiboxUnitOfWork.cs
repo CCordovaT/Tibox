@@ -4,31 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tibox.Models;
-using Tibox.Repositorio;
-using Tibox.Repositorio.Northwind;
+using Tibox.Repository;
+using Tibox.Repository.Northwind;
 
 namespace Tibox.UnitOfWork
 {
     public class TiboxUnitOfWork : IUnitOfWork, IDisposable
     {
-
         public TiboxUnitOfWork()
         {
-            Customers = new CustomerRepositorio();
-            //Orders = new BaseRepositorio<Order>();
-            Orders = new OrderRepositorio();
-            OrderItems = new BaseRepositorio<OrderItem>();
-            Products = new BaseRepositorio<Product>();
-            Suppliers = new BaseRepositorio<Supplier>();
+            Customers = new CustomerRepository();
+            Orders = new OrderRepository();
+            OrderItems = new BaseRepository<OrderItem>();
+            Products = new BaseRepository<Product>();
+            Suppliers = new BaseRepository<Supplier>();
+            Users = new UserRepository();         
         }
+        public ICustomerRepository Customers { get; private set; }
+        public IOrderRepository Orders { get; private set; }
+        public IRepository<OrderItem> OrderItems { get; private set; }
+        public IRepository<Product> Products { get; private set; }
+        public IRepository<Supplier> Suppliers { get; private set; }
+        public IUserRepository Users { get; private set; }
 
-        public void Dispose() { Dispose(); }
-        public ICustomerRepositorio Customers { get; private set; }
-        //public IRepositorio<Order> Orders { get; private set; }
-        public IOrderRepositorio Orders { get; private set; }
-        public IRepositorio<OrderItem> OrderItems { get; private set; }
-        public IRepositorio<Product> Products { get; private set; }
-        public IRepositorio<Supplier> Suppliers { get; private set; }
-
+        public void Dispose()
+        {
+            this.Dispose();
+        }
     }
 }

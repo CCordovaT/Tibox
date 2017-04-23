@@ -39,13 +39,17 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
-                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Edit", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-info">
-                    <span class="glyphicon glyphicon-edit"></span>  Edit
+                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Edit",new { id=@item.Id })'); return false;"
+                   data-toggle="modal"
+                   data-target="#modal-container"
+                   class="btn btn-success btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span> Edit
                 </a>
-                @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
-                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Delete", new { id=item.Id })')" data-toggle="modal" data-target="#modal-container" class="btn btn-danger">
-                    <span class="glyphicon glyphicon-erase"></span>  Delete
+                <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Delete",new { id=@item.Id })'); return false;"
+                   class="btn btn-danger btn-sm"
+                   data-toggle="modal"
+                   data-target="#modal-container">
+                    <span class="glyphicon glyphicon-remove"></span> Delete
                 </a>
             </td>
         </tr>

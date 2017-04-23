@@ -1,14 +1,15 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-    <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Create")')" data-toggle="modal" data-target="#modal-container" class="btn btn-success">
-      <span class="glyphicon glyphicon-plus"></span>  Create New
+<p>    
+    <a href="#" onclick="tibox.shared.renderModal('@Url.Action("Create")')"
+       data-toggle="modal"
+       data-target="#modal-container"
+       class="btn btn-success btn-sm">
+       <span class="glyphicon glyphicon-plus"></span> Create New
     </a>
 </p>
 

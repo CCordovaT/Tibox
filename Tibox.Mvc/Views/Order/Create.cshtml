@@ -6,47 +6,48 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm())
-{
-    <div class="form-horizontal">
-        <h4>Order</h4>
-        <hr>
+<div class="form-horizontal">
+    <h4>Order</h4>
+    <hr>
 
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Order_OrderDate">OrderDate</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-date="El campo OrderDate debe ser una fecha." data-val-required="Este campo es obligatorio" id="Order_OrderDate" name="Order.OrderDate" type="datetime" value="">
-                <span class="field-validation-valid text-danger" data-valmsg-for="Order.OrderDate" data-valmsg-replace="true"></span>
-            </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Order_OrderDate">OrderDate</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-date="The field OrderDate must be a date." data-val-required="This field is required." id="Order_OrderDate" name="Order.OrderDate" type="datetime" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="Order.OrderDate" data-valmsg-replace="true"></span>
         </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Order_OrderNumber">OrderNumber</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" id="Order_OrderNumber" name="Order.OrderNumber" type="text" value="">
-                <span class="field-validation-valid text-danger" data-valmsg-for="Order.OrderNumber" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Order_CustomerId">CustomerId</label>
-            <div class="col-md-10">
-                @*<input class="form-control text-box single-line" id="Order_CustomerId" name="Order.CustomerId" type="select" value="">*@
-                <select class="Order_CustomerId form-control" id="Order_CustomerId" name="Order.CustomerId"></select>
-                <span class="field-validation-valid text-danger" data-valmsg-for="Order.CustomerId" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="Order_TotalAmount">TotalAmount</label>
-            <div class="col-md-10">
-                <input class="form-control text-box single-line" data-val="true" data-val-number="El campo TotalAmount debe ser un número." id="Order_TotalAmount" name="Order.TotalAmount" type="text" value="">
-                <span class="field-validation-valid text-danger" data-valmsg-for="Order.TotalAmount" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-
     </div>
-}
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Order_OrderNumber">OrderNumber</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="Order_OrderNumber" name="Order.OrderNumber" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="Order.OrderNumber" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Order_CustomerId">CustomerId</label>
+        <div class="col-md-10">
+            <select id="CustomerId" name="CustomerId" class="form-control"></select>
+            <span class="field-validation-valid text-danger" data-valmsg-for="Order.CustomerId" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="Order_TotalAmount">TotalAmount</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-number="The field TotalAmount must be a number." id="Order_TotalAmount" name="Order.TotalAmount" type="text" value="">
+            <span class="field-validation-valid text-danger" data-valmsg-for="Order.TotalAmount" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default">
+        </div>
+    </div>
+</div>
+
 
 <div class="form-horizontal">
     <table class="table table-responsive">
@@ -62,23 +63,22 @@
                     <select id="product" class="product form-control"></select>
                 </td>
                 <td>
-                    <input type="number" id="unitPrice" class="unitPrice form-control"/>
+                    <input type="number" id="unitPrice" class="unitPrice form-control" />
                 </td>
                 <td>
-                    <input type="number" id="quantity" class="quantity form-control"/>
+                    <input type="number" id="quantity" class="quantity form-control" />
                 </td>
                 <td>
-                    <input type="button" id="addItemButton" class="btn btn-success" value="add"/>
+                    <input type="button" id="addItemButton" class="btn btn-success" value="Add" />
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+
 <div class="form-horizontal">
-    <table id="orderItemList" class="table table-responsive"></table>        
+    <table id="orderItemList" class="table table-responsive">       
+    </table>
 </div>
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
 
 <script src="~/Scripts/app/order/order.js" type="text/javascript"></script>

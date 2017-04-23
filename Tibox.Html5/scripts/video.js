@@ -1,6 +1,6 @@
 ﻿(function (tibox) {
     tibox.video = {
-        videoElement: document.getElementById("video"),
+        videoElement : document.getElementById("video"),
         play: function () {
             if (this.videoElement.paused) {
                 this.videoElement.play();

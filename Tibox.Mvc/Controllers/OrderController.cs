@@ -11,17 +11,13 @@ namespace Tibox.Mvc.Controllers
 {
     public class OrderController : BaseController
     {
-
-        //private readonly IUnitOfWork _unit;
-
         public OrderController(IUnitOfWork unit) : base(unit)
         {
-            //_unit = new TiboxUnitOfWork();
-        } 
+        }
 
         public ActionResult Index()
         {
-            return View(_unit.Orders.GetAllEntitys());
+            return View(_unit.Orders.GetAll());
         }
 
         public ActionResult Create()
@@ -33,15 +29,8 @@ namespace Tibox.Mvc.Controllers
         public JsonResult Save(OrderViewModel model)
         {
             if (!ModelState.IsValid) return Json("Error");
-            //var id = _unit.Orders.Insert(model.Order);
-            //model.OrderItems.Select(oi => { oi.OrderId = id; return oi; }).ToList();
-            //foreach(var orderitem in model.OrderItems)
-            //{
-            //    _unit.OrderItems.Insert(orderitem);
-            //}
-            var id = _unit.Orders.SaveOrderAndOrderItems(model.Order, model.OrderItems);
+            _unit.Orders.SaveOrderAndOrderItems(model.Order, model.OrderITems);
             return Json("ok");
-        }       
-
+        }                
     }
 }

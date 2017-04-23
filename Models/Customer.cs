@@ -6,25 +6,23 @@ namespace Tibox.Models
 {
     [Table("Customer")]
     public class Customer
-    {        
-        [ScaffoldColumn(false)] //para que en las vistas no aparesca este campo
-        public int Id { get; set; }                
+    {
+        [ScaffoldColumn(false)]
+        public int Id { get; set; }  
 
-        [Display(Name = "Primer Nombre")]
-        [Required(ErrorMessage = "Este campo es obligatorio")]
-        [StringLength(40, ErrorMessage = "Longitud maxima es 40")]
+        [Display(Name ="First Name")]   
+        [Required(ErrorMessage ="This field is required.")]  
+        [StringLength(40, ErrorMessage = "The max length is 40 chars.")]                 
         public string FirstName { get; set; }
 
-        [Display(Name = "Segundo Nombre")]
-        [Required(ErrorMessage = "Este campo es obligatorio")]
-        [StringLength(40, ErrorMessage = "Longitud maxima es 40")]
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "This field is required.")]
+        [StringLength(40, ErrorMessage = "The max length is 40 chars.")]
         public string LastName { get; set; }
-
         public string City { get; set; }
         public string Country { get; set; }
         public string Phone { get; set; }
         [Computed]
-        public IEnumerable<Order> Orders { get; set; }
-
+        public IEnumerable<Order> Orders { get; set; }        
     }
 }

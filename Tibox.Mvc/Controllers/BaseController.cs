@@ -11,9 +11,7 @@ namespace Tibox.Mvc.Controllers
     [ErrorHandler]
     public class BaseController : Controller
     {
-
         protected readonly IUnitOfWork _unit;
-
         public BaseController(IUnitOfWork unit)
         {
             _unit = unit;

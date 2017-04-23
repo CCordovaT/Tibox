@@ -6,23 +6,22 @@
     $bp-xl: "(min-width: 1280px)";
     $bp-xxl: "(min-width: 1900px)";
 
-    @if($breakpoint == xs){
-        @media #{$bp-xs}{ @content; }
+    @if $breakpoint == xs{
+        @media #{$bp-xs} { @content; }
     }
-    @else if($breakpoint == sm){
-        @media #{$bp-sm}{ @content; }
+    @else if $breakpoint==sm{
+        @media #{$bp-sm} { @content; }
     }
-    @else if($breakpoint == md){
-        @media #{$bp-md}{ @content; }
+    @else if $breakpoint==md{
+        @media #{$bp-md} { @content; }
     }
-    @else if($breakpoint == lg){
-        @media #{$bp-lg}{ @content; }
+    @else if $breakpoint==lg{
+        @media #{$bp-lg} { @content; }
     }
-    @else if($breakpoint == xl){
-        @media #{$bp-xl}{ @content; }
+    @else if $breakpoint==xl{
+        @media #{$bp-xl} { @content; }
     }
-    @else if($breakpoint == xxl){
-        @media #{$bp-xxl}{ @content; }
+    @else if $breakpoint==xxl{
+        @media #{$bp-xxl} { @content; }
     }
-
 }

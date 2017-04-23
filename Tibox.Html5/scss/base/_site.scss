@@ -1,47 +1,47 @@
 ﻿body {
     background-color: $background-color;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;    
 
-    @include break-point(md){
-        padding-left: 5rem;
-        padding-right: 5rem;
+    @include break-point(md) {
+        margin-left: 5rem;
+        margin-right: 5rem;
     }
 
-    .headerlogo{
-        img{
-            float:left;
-            margin-left: 2rem;
-            margin-top: 10px;
-            width: 40px;
-            height: auto;
-        }
-    }
-
-    header{
+    header {
         position: fixed;
-        right:0;
-        left:0;
-        top:0;  
+        right: 0;
+        left: 0;
+        top: 0;
+        border-width: 0 0 1px;
         background-color: $site-color-black;
         height: 4rem;
     }
 
-    section{
-        padding-top: 3rem;
-        margin-bottom: 4rem;
-    }
-
-    footer{
-        background-color: $site-color-black;
+    footer {
+        background: $site-color-black;
         color: $site-color-white;
         height: 2rem;
         position: fixed;
-        right: 0;
-        left: 0;
         bottom: 0;
+        left: 0;
+        right: 0;
         text-align: center;
-        padding-top: 10px;
+        padding-top:10px;
     }
 
+    section {
+        padding-top: 4rem;
+        margin-bottom:4rem;
+    }
+}
+
+.headerlogo {
+    img {
+        float: left;
+        margin-left: 2rem;
+        margin-top: 10px;
+        width: 40px;
+        height: auto;
+    }
 }

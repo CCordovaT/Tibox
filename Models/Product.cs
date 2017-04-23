@@ -1,6 +1,6 @@
 using Dapper.Contrib.Extensions;
 
-namespace Tibox.Models    
+namespace Tibox.Models
 {
     [Table("Product")]
     public class Product

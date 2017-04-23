@@ -28,17 +28,14 @@ namespace Tibox.Mvc
             Response.Redirect("/Home/Error");
         }
 
-        private void ConfigureInjector() {
-
+        private void ConfigureInjector()
+        {
             var container = new ServiceContainer();
             container.RegisterAssembly(Assembly.GetExecutingAssembly());
             container.RegisterAssembly("Tibox.Repository*.dll");
             container.RegisterAssembly("Tibox.UnitOfWork*.dll");
-
             container.RegisterControllers();
             container.EnableMvc();
-
         }
-
     }
 }

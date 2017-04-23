@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3FEC60D-D6FA-4572-9BC9-5CD32C377AFF}</ProjectGuid>
+    <ProjectGuid>{F1F6B300-BCD6-45CB-8BF6-7B13D8697D8B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tibox.UnitOfWork</RootNamespace>
@@ -46,12 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Tibox.Models.csproj">
-      <Project>{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}</Project>
+      <Project>{76d2c39b-04a7-4297-8978-1d8ecbd8ca67}</Project>
       <Name>Tibox.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tibox.Repositorio\Tibox.Repositorio.csproj">
-      <Project>{4B31BFAC-9D12-4882-AE75-E11F31E711D0}</Project>
-      <Name>Tibox.Repositorio</Name>
+    <ProjectReference Include="..\Tibox.Repository\Tibox.Repository.csproj">
+      <Project>{f2fc3802-bb38-4365-9b77-ad722a860acc}</Project>
+      <Name>Tibox.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

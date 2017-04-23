@@ -2,25 +2,23 @@
 
 @{
     ViewBag.Title = "Create";
+    ViewData["Test"] = "Title";
 }
-
 <h4>Create Customer</h4>
 
-@using (Ajax.BeginForm("Create", new { Controller = "Customer" },
-                        new AjaxOptions
-                        {
-                            HttpMethod = "Post",
-                            InsertionMode = InsertionMode.Replace,
-                            UpdateTargetId = "modal-body",
-                            OnSuccess="tibox.shared.closeModal"
-                        }
-                      )
-   )
+@using (Ajax.BeginForm("Create", new { Controller="Customer" },
+    new AjaxOptions
+    {
+        HttpMethod="Post",
+        InsertionMode= InsertionMode.Replace,
+        UpdateTargetId="modal-body",
+        OnSuccess="tibox.shared.closeModal"
+    })
+    )
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        
+    <div class="form-horizontal">        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -66,10 +64,9 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" value="Cancel" class="btn btn-default" onclick="tibox.shared.closeModal();" />
             </div>
         </div>
     </div>
 }
 @Scripts.Render("~/bundles/jqueryval")
-@*<script src="~/Scripts/jquery.validate.js"></script> Para que los mensajes de validacion aparezcan en el modal
-<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@

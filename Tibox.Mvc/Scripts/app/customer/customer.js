@@ -1,5 +1,4 @@
 ﻿(function (tibox) {
-
     tibox.customer = tibox.customer || {};
     tibox.customer.rowSize = 25;
     tibox.customer.pages = 1;
@@ -7,18 +6,26 @@
     function init() {
         $.get('/Customer/Count/' + tibox.customer.rowSize,
             function (data) {
-                tibox.customer.pages = data.totalPages;
+                tibox.customer.pages = data.TotalPages;
                 $('.pagination').bootpag({
                     total: tibox.customer.pages,
                     page: 1,
-                    maxVisible: 5,                    
-                    leaps: false,
-                    next: 'next',
-                    prev: 'prev'
+                    maxVisible: 5,
+                    leaps: true,
+                    firstLastUse: true,
+                    first: '←',
+                    last: '→',
+                    wrapClass: 'pagination',
+                    activeClass: 'active',
+                    disabledClass: 'disabled',
+                    nextClass: 'next',
+                    prevClass: 'prev',
+                    lastClass: 'last',
+                    firstClass: 'first'
                 }).on('page', function (event, num) {
                     getCustomers(num);
                 });
-            })
+            });
     }
 
     function getCustomers(num) {
@@ -30,5 +37,4 @@
 
     init();
     getCustomers(1);
-
-})(window.tibox = window.tibox || { })
+})(window.tibox = window.tibox || {});

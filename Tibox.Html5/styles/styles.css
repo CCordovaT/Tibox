@@ -1,0 +1,122 @@
+﻿body {
+  background-color: #E6E6FA;
+  margin-left: 2rem;
+  margin-right: 2rem; }
+  @media (min-width: 768px) {
+    body {
+      margin-left: 5rem;
+      margin-right: 5rem; } }
+  body header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-width: 0 0 1px;
+    background-color: #000;
+    height: 4rem; }
+  body footer {
+    background: #000;
+    color: #fff;
+    height: 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px; }
+  body section {
+    padding-top: 4rem;
+    margin-bottom: 4rem; }
+
+.headerlogo img {
+  float: left;
+  margin-left: 2rem;
+  margin-top: 10px;
+  width: 40px;
+  height: auto; }
+
+input:invalid {
+  border: 2px solid red; }
+
+.button-base, .menu-title {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #f5eded;
+  border-radius: 4px;
+  height: 60px;
+  width: 300px;
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: #2f2e2e; }
+  @media (min-width: 768px) {
+    .button-base, .menu-title {
+      height: 30px;
+      width: 150px;
+      font-size: 1rem; }
+      .button-base:hover, .menu-title:hover {
+        background-color: #575656; } }
+
+nav {
+  z-index: 10; }
+  nav ul li a {
+    text-decoration: none; }
+    nav ul li a:link {
+      text-decoration: none; }
+    nav ul li a:visited {
+      color: #fff; }
+    nav ul li a:hover {
+      text-decoration: underline; }
+
+.menu-title {
+  color: #fff;
+  right: 2rem;
+  float: right;
+  position: fixed;
+  height: 30px;
+  width: 80px; }
+  @media (min-width: 768px) {
+    .menu-title {
+      display: none; } }
+
+.dropdown {
+  display: inline-block;
+  position: fixed;
+  float: right; }
+
+.dropdown-content {
+  display: none;
+  background-color: #000;
+  min-width: 90px;
+  padding: 1rem 1.3rem;
+  margin-top: 0; }
+  @media (min-width: 768px) {
+    .dropdown-content {
+      position: relative;
+      background-color: transparent;
+      display: block;
+      float: left;
+      padding-left: 1rem; } }
+  .dropdown-content li {
+    display: block;
+    float: left;
+    padding-left: 1rem; }
+    .dropdown-content li a {
+      color: #fff; }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  right: 0;
+  position: fixed; }
+  @media (min-width: 768px) {
+    .dropdown:hover .dropdown-content {
+      top: 1rem;
+      right: auto;
+      top: auto;
+      position: relative; } }
+
+.map {
+  width: 100%;
+  height: 400px; }
+

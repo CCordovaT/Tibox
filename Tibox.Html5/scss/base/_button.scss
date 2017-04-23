@@ -1,4 +1,4 @@
-﻿.button-base{
+﻿.button-base {
     display: block;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -8,15 +8,15 @@
     width: 300px;
     font-weight: 300;
     cursor: pointer;
-    font-size: 1.5rem;
-    background-color: $button-color-black;
+    font-size: 1.5rem;  
+    background-color: $button-color-black; 
 
-    @include break-point(md){
+    @include break-point(md) {
         height: 30px;
         width: 150px;
         font-size: 1rem;
 
-        &:hover{
+        &:hover {
             background-color: $button-hover-color-black;
         }
     }

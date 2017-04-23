@@ -1,4 +1,3 @@
-
 using Dapper.Contrib.Extensions;
 using System;
 using System.Collections.Generic;
@@ -10,14 +9,14 @@ namespace Tibox.Models
     public class Order
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Este campo es obligatorio")]
         [DataType(DataType.DateTime)]
-        public DateTime OrderDate { get; set; }        
+        [Required(ErrorMessage = "This field is required.")]
+        public DateTime OrderDate { get; set; }                
         public string OrderNumber { get; set; }
-        [Required(ErrorMessage = "Este campo es obligatorio")]
+        [Required(ErrorMessage = "This field is required.")]
         public int CustomerId { get; set; }
         public decimal? TotalAmount { get; set; }
-        [Computed]           
+        [Computed]
         public IEnumerable<OrderItem> OrderItems { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿@model Tibox.Models.Customer
 
 @{
-    ViewBag.Title = "delete";
+    ViewBag.Title = "Delete";
 }
 
-<h2>delete</h2>
+<h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -54,21 +54,19 @@
     </dl>
 
     @using (Ajax.BeginForm("Delete", new { Controller = "Customer" },
-                                            new AjaxOptions
-                                            {
-                                                HttpMethod = "Post",
-                                                InsertionMode = InsertionMode.Replace,
-                                                UpdateTargetId = "modal-body",
-                                                OnSuccess = "tibox.shared.closeModal"
-                                            }
-                                          )
-                       )
+                    new AjaxOptions
+                    {
+                        HttpMethod = "Post",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "modal-body",
+                        OnSuccess = "tibox.shared.closeModal"
+                    }))
     {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <input type="button" value="Cancel" class="btn btn-default" onclick="tibox.shared.closeModal();" />
         </div>
     }
 </div>
