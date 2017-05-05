@@ -2,5 +2,13 @@
   {
     "outputFile": "styles/styles.css",
     "inputFile": "scss/styles.scss"
+  },
+  {
+    "outputFile": "scss/helpers/_mixin.css",
+    "inputFile": "scss/helpers/_mixin.scss"
+  },
+  {
+    "outputFile": "scss/base/_site.css",
+    "inputFile": "scss/base/_site.scss"
   }
 ]

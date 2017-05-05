@@ -7,6 +7,7 @@ namespace Tibox.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : class
     {
+        
         protected readonly string _connectionString;
         public BaseRepository()
         {

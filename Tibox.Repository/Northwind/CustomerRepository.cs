@@ -40,7 +40,7 @@ namespace Tibox.Repository.Northwind
 
                 return connection
                     .QueryFirst<Customer>("dbo.CustomerSearchByNames",
-                    parameters, 
+                    parameters,
                     commandType: System.Data.CommandType.StoredProcedure);
             }
         }

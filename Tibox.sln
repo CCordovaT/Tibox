@@ -32,6 +32,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{50E7F87B-0E7F-4F38-A886-7ED981FEB4C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{614B1463-38D0-4A77-A529-ECD94613C9FF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Users\CCordovat\Downloads\PayPalSvc.wsdl = ..\..\Users\CCordovat\Downloads\PayPalSvc.wsdl
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibox.Mvc", "Tibox.Mvc\Tibox.Mvc.csproj", "{BC2CFCF6-12E6-4D31-9E1C-546A89072A8B}"
 EndProject

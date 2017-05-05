@@ -1,0 +1,23 @@
+﻿.button-base {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: $button-color-white;
+    border-radius: 4px;
+    height: 60px;
+    width: 300px;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 1.5rem;  
+    background-color: $button-color-black; 
+
+    @include break-point(md) {
+        height: 30px;
+        width: 150px;
+        font-size: 1rem;
+
+        &:hover {
+            background-color: $button-hover-color-black;
+        }
+    }
+}
