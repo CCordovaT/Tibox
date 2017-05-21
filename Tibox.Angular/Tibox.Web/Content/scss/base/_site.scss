@@ -1,3 +1,32 @@
-﻿body{
-    background-color: lightgray;
+﻿body {
+        height: 100vh;
+    }
+section{
+    padding-top: 7rem;    
+    background-color: $site-color-lightgray;
+    min-height: 100%;
+}
+#limpiador{
+    height: 1.8rem;
+}
+footer{
+    background-color: $site-color-black;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    color: $site-color-gray;
+    text-align: center;
+}
+table{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    td{
+        background-color: $site-color-white;
+    }
+    th{
+       background-color:  $site-color-black;
+       color: $site-color-white; 
+    }
 }

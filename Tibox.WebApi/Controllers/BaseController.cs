@@ -8,7 +8,7 @@ using Tibox.UnitOfWork;
 
 namespace Tibox.WebApi.Controllers
 {
-
+    [Authorize]
     public class BaseController : ApiController
     {
         protected readonly IUnitOfWork _unit;

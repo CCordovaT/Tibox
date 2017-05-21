@@ -1,9 +1,15 @@
 ﻿<div class="product-card">
-    <div><label>Id: </label>{{id}}</div>
-    <div><label>productName: </label>{{productName}}</div>
-    <div><label>supplierId: </label>{{supplierId}}</div>
-    <div><label>unitPrice: </label>{{unitPrice}}</div>
-    <div><label>package: </label>{{package}}</div>
-    <div><label>isDiscontinued: </label>{{isDiscontinued}}</div>
-    <div><ng-transclude></ng-transclude></div>
+    <div class="row">
+        <label class="col-sm-2">Id: </label>
+        <span class="col-sm-6">{{::id}}</span>
+    </div>
+    <div class="row">
+        <label class="col-sm-2">productName: </label>
+        <span class="col-sm-6">{{::productName}}</span>
+    </div>
+    <div class="row"><label class="col-sm-2">supplierId: </label><span class="col-sm-6">{{::supplierId}}</span></div>
+    <div class="row"><label class="col-sm-2">unitPrice: </label><span class="col-sm-6">{{::unitPrice}}</span></div>
+    <div class="row"><label class="col-sm-2">package: </label><span class="col-sm-6">{{::package}}</span></div>
+    <div class="row"><label class="col-sm-2">isDiscontinued: </label><span class="col-sm-6">{{::isDiscontinued}}</span></div>
+    <div class="row"><ng-transclude></ng-transclude></div>
 </div>

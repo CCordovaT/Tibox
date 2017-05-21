@@ -30,7 +30,7 @@ namespace Tibox.WebApi.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var id = _unit.Customers.Insert(customer);
-            return Ok(new { id = id });
+            return Ok(id);
         }
 
         [Route("")]

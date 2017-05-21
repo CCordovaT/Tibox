@@ -114,6 +114,10 @@
     <Content Include="app\app.controller.js" />
     <Content Include="app\components\modal\modal-directive.html" />
     <Content Include="app\components\modal\modal.directive.js" />
+    <Content Include="app\private\customer\customer.controller.js" />
+    <Content Include="app\private\customer\directives\customer-form\customer-form.html" />
+    <Content Include="app\private\customer\directives\customer-form\customer-form.js" />
+    <Content Include="app\private\customer\index.html" />
     <Content Include="app\private\product\directives\product-card\product-card.html" />
     <Content Include="app\private\product\directives\product-card\product-card.js" />
     <Content Include="app\private\product\directives\product-form\product-form.html" />

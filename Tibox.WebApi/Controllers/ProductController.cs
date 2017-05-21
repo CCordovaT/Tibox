@@ -10,8 +10,7 @@ using Tibox.UnitOfWork;
 
 namespace Tibox.WebApi.Controllers
 {
-    [RoutePrefix("product")]
-    [Authorize]
+    [RoutePrefix("product")]    
     public class ProductController : BaseController
     {
         private readonly AbstractValidator<Product> _validator;

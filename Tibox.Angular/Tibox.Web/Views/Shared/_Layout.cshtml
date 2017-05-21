@@ -23,16 +23,18 @@
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="login" ui-sref-active="active">Ingresar</a></li>                    
                     <li><a href="" ng-click="vm.logout();" ui-sref-active="active">Salir</a></li>
-                    <li><a ui-sref="product" ui-sref-active="active">Productos</a></li>
+                    <li><a ui-sref="product" ui-sref-active="active">Products</a></li>
+                    <li><a ui-sref="customer" ui-sref-active="active">Customers</a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>    
     <section>
-        <div class="container body-content">
+        <div id="container" class="container body-content">
             @RenderBody()
         </div>
     </section>
+    <div id="limpiador"></div>
     <footer>
         &copy; Todos los derechos reservados a Tibox
     </footer>    

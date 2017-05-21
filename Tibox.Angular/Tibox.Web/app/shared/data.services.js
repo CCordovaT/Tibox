@@ -27,7 +27,7 @@
         }
 
         function deleteData(url) {
-            return $http.delete(url, data);
+            return $http.delete(url);
         }
 
     }

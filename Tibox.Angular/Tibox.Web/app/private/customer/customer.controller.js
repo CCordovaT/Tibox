@@ -1,28 +1,36 @@
 ﻿(function () {
+
     'use strict';
 
-    angular.module('app')
-        .controller('productController', productController);
+    angular.module('app').controller("customerController", customerController);
 
-    productController.$inject = ['dataService', 'configService', '$state'];
+    customerController.$inject = ['dataService', 'configService', '$state'];
 
-    function productController(dataService, configService, $state) {
+    function customerController(dataService, configService, $state) {
+
         var apiUrl = configService.getApiUrl();
         var vm = this;
 
         //Primero propiedades
-        vm.product = {};
-        vm.productList = [];
+        vm.customer = {};
+        vm.customerList = [];
         vm.modalTitle = '';
         vm.modalButtonTitle = '';
         vm.readOnly = false;
         vm.isDelete = false;
 
+        vm.headerId = "Id";
+        vm.headerFirstName = "Ape. Paterno";
+        vm.headerLastName = "Ape. Materno";
+        vm.headerCity = "Ciudad";
+        vm.headerCountry = "País";
+        vm.headerPhone = "Teléfono";
+
         //funciones
         vm.create = create;
         vm.edit = edit;
         vm.Delete = Delete;
-        vm.getProduct = getProduct;
+        vm.getCustomer = getCustomer;
 
         init();
 
@@ -32,21 +40,21 @@
         }
 
         function list() {
-            dataService.getData(apiUrl + '/product/list')
+            dataService.getData(apiUrl + '/customer/list')
             .then(function (result) {
-                vm.productList = result.data;
+                vm.customerList = result.data;
             }, function (error) {
-                vm.productList = [];
+                vm.customerList = [];
                 console.log(error);
             });
         }
 
-        function getProduct(id) {
-            vm.product = null;
+        function getCustomer(id) {
+            vm.customer = null;
 
-            dataService.getData(apiUrl + '/product/' + id)
+            dataService.getData(apiUrl + '/customer/' + id)
                 .then(function (result) {
-                    vm.product = result.data;
+                    vm.customer = result.data;
                 },
                 function (error) {
                     console.log(error);
@@ -55,27 +63,27 @@
         }
 
         function edit() {
-            vm.modalTitle = 'Editar Producto';
+            vm.modalTitle = 'Editar Customer';
             vm.modalButtonTitle = 'Editar';
             vm.readOnly = true;
             vm.isDelete = true;
-            vm.modalFunction = updateProduct;
+            vm.modalFunction = updateCustomer;
         }
 
         function Delete() {
-            vm.modalTitle = 'Eliminar Producto';
+            vm.modalTitle = 'Eliminar Customer';
             vm.modalButtonTitle = 'Eliminar';
             vm.readOnly = false;
             vm.isDelete = false;
-            vm.modalFunction = deleteProduct;
+            vm.modalFunction = deleteCustomer;
         }
 
-        function updateProduct() {
-            if (!vm.product) return;
-            dataService.putData(apiUrl + '/product', vm.product)
+        function updateCustomer() {
+            if (!vm.customer) return;
+            dataService.putData(apiUrl + '/customer', vm.customer)
                 .then(
                     function (result) {
-                        vm.product = {};
+                        vm.customer = {};
                         list();
                         closeModal();
                     },
@@ -85,12 +93,12 @@
                 );
         }
 
-        function deleteProduct() {
-            if (!vm.product) return;
-            dataService.deleteData(apiUrl + '/product/' + vm.product.id)
+        function deleteCustomer() {
+            if (!vm.customer) return;
+            dataService.deleteData(apiUrl + '/customer/' + vm.customer.id)
                 .then(
                     function (result) {
-                        vm.product = {};
+                        vm.customer = {};
                         list();
                         closeModal();
                     },
@@ -101,17 +109,17 @@
         }
 
         function create() {
-            vm.product = {};
-            vm.modalTitle = 'Crear nuevo producto';
+            vm.customer = {};
+            vm.modalTitle = 'Crear nuevo customer';
             vm.modalButtonTitle = 'Crear';
             vm.readOnly = false;
             vm.isDelete = false;
-            vm.modalFunction = createProduct;
+            vm.modalFunction = createCustomer;
         }
 
-        function createProduct() {
-            if (!vm.product) return;
-            dataService.postData(apiUrl + '/product', vm.product)
+        function createCustomer() {
+            if (!vm.customer) return;
+            dataService.postData(apiUrl + '/customer', vm.customer)
                 .then(
                     function (result) {
                         list();
@@ -128,4 +136,5 @@
         }
 
     }
+
 })();
