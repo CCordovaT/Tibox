@@ -1,21 +1,22 @@
 ﻿<div ng-controller="loginController as vm">
-    <form class="form-horizontal" id="loginModel" ng-submit="vm.login()">
+    <div ng-if="vm.showError" class="alert alert-danger">
+        <strong>Error!</strong> El usuario o contraseña son incorrectos.
+    </div>
+    <form id="loginModel" ng-submit="vm.login()" class="form-horizontal">
         <div class="form-group">
-            <label class="control-label col-sm-2">UserName:</label>
-            <div class="col-sm-6">
-                <input class="form-control" id="userName" type="text" ng-model="vm.user.userName" /><br />
+            <label for="userName" class="control-label col-sm-2">Usuario:</label>
+            <div class="col-sm-4">
+                <input id="userName" type="text" class="form-control" ng-model="vm.user.userName" /><br />
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2">Password:</label>
-            <div class="col-sm-6">
-                <input class="form-control" id="password" type="password" ng-model="vm.user.password" /><br />
+            <label for="password" class="control-label col-sm-2">Contraseña:</label>
+            <div class="col-sm-4">
+                <input id="password" type="password" class="form-control" ng-model="vm.user.password" /><br />
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </form>
 </div>
