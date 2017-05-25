@@ -153,7 +153,7 @@ namespace Tibox.AutomationTests
 
             LoginPage.LoginAs("christian@hotmail.com").WithPassword("1234").Login();
             Thread.Sleep(TimeSpan.FromSeconds(3));
-
+            //Ccordovat
             SupplierPage.Go();
             SupplierPage.StartDelete().Delete();
 
