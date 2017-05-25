@@ -3,19 +3,19 @@
 
 section {
   padding-top: 8rem;
-  background-color: lightgrey;
+  background-color: #DCDCDC;
   min-height: 100%; }
 
 #limpiador {
   height: 1.8rem; }
 
 footer {
-  background-color: #000;
+  background-color: #303030;
   left: 0;
   right: 0;
   bottom: 0;
   position: fixed;
-  color: gray;
+  color: #9D9D9D;
   text-align: center; }
 
 table {
@@ -25,7 +25,7 @@ table {
   table td {
     background-color: #fff; }
   table th {
-    background-color: #000;
+    background-color: #303030;
     color: #fff; }
 
 nav {
@@ -57,7 +57,7 @@ nav {
 
 .dropdown-content {
   display: none;
-  background-color: #000;
+  background-color: #303030;
   min-width: 90px;
   padding: 1rem 1.3rem;
   margin-top: 0; }
@@ -119,4 +119,9 @@ input:invalid {
   margin-bottom: .5rem; }
   .product-card div {
     padding-left: 2rem; }
+  .product-card button {
+    margin-left: 15px; }
+
+#modal-container ul {
+  list-style-type: none; }
 

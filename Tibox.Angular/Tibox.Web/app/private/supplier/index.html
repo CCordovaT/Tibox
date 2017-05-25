@@ -1,0 +1,59 @@
+﻿<div ng-controller="supplierController as vm">
+
+    <div ng-if="vm.showMessageConfirm" class="alert alert-success">
+        Operacion completa
+    </div>
+
+    <h1>Supplier Controller</h1>
+    <button ng-click="vm.create();" class="btn btn-success btn-sm"
+            data-toggle="modal"
+            data-target="#modal-container">
+        <span class="glyphicon glyphicon-plus"></span> Crear
+    </button>
+
+    <table class="table table-responsive">
+        <tr>
+            <th>{{::vm.headerId}}</th>
+            <th>{{::vm.headerCompanyName}}</th>
+            <th>{{::vm.headerContactName}}</th>
+            <th>{{::vm.headerContactTitle}}</th>
+            <th>{{::vm.headerCity}}</th>
+            <th>{{::vm.headerCountry}}</th>
+            <th>{{::vm.headerPhone}}</th>
+            <th>{{::vm.headerFax}}</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="supplier in vm.supplierList">
+            <td>{{::supplier.id}}</td>
+            <td>{{::supplier.companyName}}</td>
+            <td>{{::supplier.contactName}}</td>
+            <td>{{::supplier.contactTitle}}</td>
+            <td>{{::supplier.city}}</td>
+            <td>{{::supplier.country}}</td>
+            <td>{{::supplier.phone}}</td>
+            <td>{{::supplier.fax}}</td>
+            <td class="text-nowrap">
+                <button ng-click="vm.getSupplier(supplier.id); vm.edit();" class="btn btn-success btn-sm"
+                        data-toggle="modal"
+                        data-target="#modal-container">
+                    <span class="glyphicon glyphicon-edit"></span> Editar
+                </button>
+                <button ng-click="vm.getSupplier(supplier.id); vm.Delete();" class="btn btn-danger btn-sm"
+                        data-toggle="modal"
+                        data-target="#modal-container">
+                    <span class="glyphicon glyphicon-erase"></span> Eliminar
+                </button>
+            </td>
+        </tr>
+    </table>
+    <modal-panel title="{{vm.modalTitle}}"
+                 button-title="{{vm.modalButtonTitle}}"
+                 save-function="vm.modalFunction"
+                 close-function="vm.closeModal"
+                 read-only="vm.readOnly"
+                 is-delete="vm.isDelete">
+        <supplier-form supplier="vm.supplier" is-delete="vm.isDelete" errors="vm.errors" show-errors="vm.showErrors">
+        </supplier-form>
+    </modal-panel>
+</div>
+

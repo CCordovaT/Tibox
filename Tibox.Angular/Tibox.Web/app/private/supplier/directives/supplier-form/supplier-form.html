@@ -1,0 +1,56 @@
+﻿<div>
+    <input type="hidden" ng-model="supplier.id"
+           value="{{supplier.id}}" />
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="firstName">Compañia:</label>
+            <input class="form-control" type="text" ng-model="supplier.companyName"
+                   value="{{supplier.companyName}} " />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="lastName">Nombre del contacto:</label>
+            <input class="form-control" type="text" ng-model="supplier.contactName"
+                   value="{{supplier.contactName}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="city">Cargo del contacto:</label>
+            <input class="form-control" type="text" ng-model="supplier.contactTitle"
+                   value="{{supplier.contactTitle}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="country">Ciudad:</label>
+            <input class="form-control" type="text" ng-model="supplier.city"
+                   value="{{supplier.city}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="phone">Pais:</label>
+            <input class="form-control" type="text" ng-model="supplier.country"
+                   value="{{supplier.country}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="phone">Teléfono:</label>
+            <input class="form-control" type="text" ng-model="supplier.phone"
+                   value="{{supplier.phone}}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <label class="control-label" for="phone">Fax:</label>
+            <input class="form-control" type="text" ng-model="supplier.fax"
+                   value="{{supplier.fax}}" />
+        </div>
+    </div>
+    <ul class="alert alert-danger" ng-if="showErrors">
+        <li ng-repeat="e in errors">{{e}}</li>
+    </ul>
+</div>

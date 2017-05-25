@@ -124,6 +124,10 @@
     <Content Include="app\private\product\directives\product-form\product-form.js" />
     <Content Include="app\private\product\index.html" />
     <Content Include="app\private\product\producto.controller.js" />
+    <Content Include="app\private\supplier\index.html" />
+    <Content Include="app\private\supplier\directives\supplier-form\supplier-form.html" />
+    <Content Include="app\private\supplier\directives\supplier-form\supplier-form.js" />
+    <Content Include="app\private\supplier\supplier.controller.js" />
     <Content Include="app\public\login\login.controller.js" />
     <Content Include="app\public\login\login.html" />
     <Content Include="app\shared\authentication.service.js" />
@@ -153,6 +157,7 @@
     <None Include="Content\scss\base\_input.scss" />
     <None Include="Content\scss\base\_navigation.scss" />
     <None Include="Content\scss\base\_site.scss" />
+    <Content Include="Content\scss\components\_modal.scss" />
     <None Include="Content\scss\directives\_product.scss" />
     <None Include="Content\scss\helpers\_colors.scss" />
     <None Include="Content\scss\helpers\_mixin.scss" />
@@ -187,7 +192,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\private\supplier\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>

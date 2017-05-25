@@ -74,6 +74,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BasicTest.cs" />
+    <Compile Include="SupplierCRUDTest.cs" />
     <Compile Include="LoginPageTestNavigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +82,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Models\Tibox.Models.csproj">
+      <Project>{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}</Project>
+      <Name>Tibox.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tibox.Automation\Tibox.Automation.csproj">
       <Project>{a45e493b-f8e9-4a88-bdb2-07fdd653155c}</Project>
       <Name>Tibox.Automation</Name>

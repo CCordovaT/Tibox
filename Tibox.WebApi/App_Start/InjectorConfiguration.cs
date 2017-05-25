@@ -23,7 +23,7 @@ namespace Tibox.WebApi
             container.RegisterAssembly("Tibox.UnitOfWork*.dll");
 
             container.Register<AbstractValidator<Product>, ProductValidator>();
-
+            container.Register<AbstractValidator<Supplier>, SupplierValidator>();
 
             container.RegisterApiControllers();
             container.EnableWebApi(config);

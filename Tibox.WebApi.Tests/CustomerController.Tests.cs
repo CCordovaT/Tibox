@@ -56,15 +56,6 @@ namespace Tibox.WebApi.Tests
         public void InsertBadRequest()
         {
 
-            //var _customer = new Customer
-            //{
-            //    Id = 678,
-            //    FirstName = "",
-            //    LastName = "proxy",
-            //    City = "cuty",
-            //    Country = "onntry",
-            //    Phone = "phone1"
-            //};
             _customerController.ModelState.Clear();
             _customerController.ModelState.AddModelError("fakeError", "FakeError");
 

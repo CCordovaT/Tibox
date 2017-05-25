@@ -34,7 +34,7 @@ namespace Tibox.AutomationTests
         {
             LoginPage.Go();
             LoginPage.LoginAs("christian@hotmail.com").WithPassword("12345").Login();
-            Thread.Sleep(TimeSpan.FromSeconds(3));
+            Thread.Sleep(TimeSpan.FromSeconds(5));
             LoginPage.IsAlertErrorPresent().Should().BeTrue();
             LoginPage.LogOut();
             Driver.CloseInstance();
