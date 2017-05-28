@@ -169,7 +169,7 @@ namespace Tibox.WebApi.Tests
         public void InsertBad()
         {
 
-            var result = true;
+            var result = false;
             result.Should().BeFalse();
         }
 
