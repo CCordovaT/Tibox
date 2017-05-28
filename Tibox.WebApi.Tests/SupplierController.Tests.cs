@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tibox.UnitOfWork;
+﻿using Tibox.UnitOfWork;
 using Tibox.WebApi.Tests.MockData;
 using Tibox.WebApi.Controllers;
 using Xunit;
@@ -9,7 +7,6 @@ using FluentAssertions;
 using Tibox.Models;
 using System.Linq;
 using System.Collections.Generic;
-using Tibox.WebApi.Validators;
 
 namespace Tibox.WebApi.Tests
 {

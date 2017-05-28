@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Xunit;
+﻿using Xunit;
 using Tibox.UnitOfWork;
 using Tibox.WebApi.Controllers;
 using Tibox.WebApi.Tests.MockData;
