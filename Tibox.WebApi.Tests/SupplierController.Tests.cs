@@ -9,6 +9,7 @@ using FluentAssertions;
 using Tibox.Models;
 using System.Linq;
 using System.Collections.Generic;
+using Tibox.WebApi.Validators;
 
 namespace Tibox.WebApi.Tests
 {
@@ -18,6 +19,7 @@ namespace Tibox.WebApi.Tests
 
         private readonly IUnitOfWork m_unidad;
         private SupplierController m_controller;
+
         public SupplierControllerTest()
         {
             m_unidad = new MockedUnitOfWork();
