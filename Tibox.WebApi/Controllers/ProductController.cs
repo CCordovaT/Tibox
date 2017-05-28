@@ -32,7 +32,7 @@ namespace Tibox.WebApi.Controllers
         [HttpPost]
         public IHttpActionResult Post(Product product)
         {
-            //if (!ModelState.IsValid) return BadRequest(ModelState);
+
             var result = _validator.Validate(product);
             if (!result.IsValid)
             {

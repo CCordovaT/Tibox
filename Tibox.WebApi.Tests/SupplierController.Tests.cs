@@ -165,5 +165,13 @@ namespace Tibox.WebApi.Tests
             _result.Content.Count().Should().Be(m_unidad.Suppliers.GetAll().Count());
         }
 
+        [Fact]
+        public void InsertBad()
+        {
+
+            var result = true;
+            result.Should().BeFalse();
+        }
+
     }
 }
